@@ -23,15 +23,15 @@ def read_from_hash(hash, key)
   hash[key]
 end
 
-# This should work but fails tests
-# def update_counting_hash(hash, key)
-#   hash[key] ? hash[key] += 1 : hash[key] = 1
-# end
-
 def update_counting_hash(hash, key)
-  if hash[key].nil?
-    hash[key] = 1
-  else
-    hash[key] += 1
-  end
+  hash[key] ? hash[key] += 1 : hash[key] = 1
+  hash
 end
+
+# def update_counting_hash(hash, key)
+#   if hash[key].nil?
+#     hash[key] = 1
+#   else
+#     hash[key] += 1
+#   end
+# end
